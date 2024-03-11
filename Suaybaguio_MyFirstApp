@@ -1,0 +1,41 @@
+
+    TextView myDisplay;
+    TextView myName;
+    EditText myInput;
+    TextView myMain;
+    Button myPindotan;
+    Button myHawa;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        myDisplay = (TextView) findViewById(R.id.txtDisplay);
+        myName = (TextView) findViewById(R.id.txtName);
+        myInput = findViewById(R.id.txtInput);
+        myMain = (TextView) findViewById(R.id.txtMain);
+        myPindotan = (Button) findViewById(R.id.btnPindotan);
+        myHawa = (Button) findViewById(R.id.btnHawa);
+
+        //myMain.setText("Hello Adulthood!");
+
+        myPindotan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+        String name = myInput.getText().toString();
+
+                myMain.setText("Hello "+name+"!");
+            }
+        });
+
+        myHawa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myMain.setText("Hello again");
+            }
+        });
+
+    }
+}
